@@ -1,7 +1,8 @@
 const http = require("http");
 
 const hostname = "localhost";
-const port = 3000;
+
+const port = 3001;
 
 const server = http.createServer((req, res) => {
   const { url } = req;
@@ -11,14 +12,13 @@ const server = http.createServer((req, res) => {
   if (url === "/translations") {
     const translations = { 1: "one", 2: "two", 3: "three" };
 
-    res.setHeader("Content-Type", "application/json");
+    res.setHeader("Content-Type", "appliation/json");
 
     res.write(JSON.stringify(translations));
-
-    res.end();
+    res.end("Translations");
   }
 
-  res.end("Node Nody no no!");
+  res.end("Welcome to Node!");
 });
 
 server.listen(port, hostname, () => {
